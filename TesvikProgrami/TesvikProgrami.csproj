@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\squirrel.windows.1.9.1\build\squirrel.windows.props" Condition="Exists('packages\squirrel.windows.1.9.1\build\squirrel.windows.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66A9FBFA-50EF-4DD0-8F5F-FAFB0D493541}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TesvikProgrami</RootNamespace>
+    <AssemblyName>TesvikProgrami</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>ftp://edenetim.saygidenetim.com.tr/tp/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <InstallUrl>http://localhost/</InstallUrl>
+    <TargetCulture>tr</TargetCulture>
+    <ProductName>Teşvik Programı</ProductName>
+    <PublisherName>Saygı Denetim</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconNew.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CCD82D0509829A5FB1ED0D8CADB4DF65E9F3CC19</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TesvikProgrami_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.94.2\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
+      <HintPath>packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.MsDelta, Version=1.1.0.0, Culture=neutral, PublicKeyToken=46b2138a390abf55, processorArchitecture=MSIL">
+      <HintPath>packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.PatchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e8888ee913ed789, processorArchitecture=MSIL">
+      <HintPath>packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1">
+      <HintPath>..\..\..\Teşvik Programı Eski Versiyonlar\TesvikProgrami Yeni Aphb\TesvikProgrami\TesvikProgrami\bin\Debug\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1">
+      <HintPath>..\..\..\Teşvik Programı Eski Versiyonlar\TesvikProgrami Yeni Aphb\TesvikProgrami\TesvikProgrami\bin\Debug\DevExpress.Utils.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1">
+      <HintPath>..\..\..\Teşvik Programı Eski Versiyonlar\TesvikProgrami Yeni Aphb\TesvikProgrami\TesvikProgrami\bin\Debug\DevExpress.XtraEditors.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.1">
+      <HintPath>..\..\..\Teşvik Programı Eski Versiyonlar\TesvikProgrami Yeni Aphb\TesvikProgrami\TesvikProgrami\bin\Debug\DevExpress.XtraGrid.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.1">
+      <HintPath>..\..\..\TP Dosyalar\Teşvik Programı Eski Versiyonlar\TesvikProgrami Yeni Aphb\TesvikProgrami\TesvikProgrami\bin\Debug\DevExpress.XtraLayout.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.1">
+      <HintPath>..\..\..\TP Dosyalar\Teşvik Programı Eski Versiyonlar\TesvikProgrami Yeni Aphb\TesvikProgrami\TesvikProgrami\bin\Debug\DevExpress.XtraPrinting.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.4.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.4.0\lib\net45\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\squirrel.windows.1.9.1\lib\Net45\NuGet.Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.17.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>packages\SharpCompress.0.17.1\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Splat.1.6.2\lib\Net45\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Squirrel, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\squirrel.windows.1.9.1\lib\Net45\Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.110.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.110.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.110.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tesseract, Version=3.0.2.0, Culture=neutral, PublicKeyToken=ebeb3d86bef60cbe, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.3.0.2.0\lib\net20\Tesseract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsgariUcretDestekTutarlari.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AsgariUcretler.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AylikCalisanSayilari.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BasvuruDonemleri.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BelgeTurleri.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BorcluAylar.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Captcha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Captcha.Designer.cs">
+      <DependentUpon>Captcha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari14857YapilanSirketler.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\BasvuruKisiDownload3294.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload7316.cs" />
+    <Compile Include="Classes\MuhtasarOnaydaBekleyenlerResponse.cs" />
+    <Compile Include="Classes\PdfOkuma.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload27256.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload17256.cs" />
+    <Compile Include="Classes\Yersiz7252BulSonuc.cs" />
+    <Compile Include="Classes\NetsisSatir.cs" />
+    <Compile Include="Classes\IcmalHesaplamaResult.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload7252.cs" />
+    <Compile Include="Classes\KisaCalismaRow.cs" />
+    <Compile Include="Classes\KisiGirisCikislariResponse.cs" />
+    <Compile Include="Classes\IndirilecekAphb.cs" />
+    <Compile Include="Classes\BildirgeIcmaliResponse.cs" />
+    <Compile Include="Classes\Sistem7252ListesiResponse.cs" />
+    <Compile Include="Classes\Sistem7103ListesiResponse.cs" />
+    <Compile Include="Classes\MufredatKarti.cs" />
+    <Compile Include="Classes\BaseResponse.cs" />
+    <Compile Include="Classes\FormIndirmeTarihSecenekleri.cs" />
+    <Compile Include="Classes\SirketAphbBasvuruFormuIndirme.cs" />
+    <Compile Include="Classes\TesvikHesapla.cs" />
+    <Compile Include="Classes\TumKisiler.cs" />
+    <Compile Include="Classes\IsyeriAphbBasvuruFormuIndirme.cs" />
+    <Compile Include="Classes\Indir.cs" />
+    <Compile Include="Classes\BasvuruFormuIndir.cs" />
+    <Compile Include="Classes\AphbBfIndirmeSonucu.cs" />
+    <Compile Include="Classes\MosipEmanetTahsilat.cs" />
+    <Compile Include="Classes\ExceleYaz.cs" />
+    <Compile Include="Classes\IseGirisCikisKaydi.cs" />
+    <Compile Include="Classes\CariKisiler.cs" />
+    <Compile Include="Classes\CariKisi.cs" />
+    <Compile Include="Classes\IseGirisKaydi.cs" />
+    <Compile Include="Classes\TwoCaptcha.cs" />
+    <Compile Include="Classes\BankaIsverenEmanetTahsilat.cs" />
+    <Compile Include="Classes\MuhtasarIsyeri.cs" />
+    <Compile Include="Classes\ResponseMuhtasarIsyerleriBul.cs" />
+    <Compile Include="Classes\AphbIndir.cs" />
+    <Compile Include="Consts\EgitimBelgesiAdlari.cs" />
+    <Compile Include="Consts\TesvikHesaplamaSabitleri.cs" />
+    <Compile Include="Consts\BasvuruFormuIndirmeSabitleri.cs" />
+    <Compile Include="Consts\IcmalOlusturmaSabitleri.cs" />
+    <Compile Include="Consts\BildirgeOlusturmaSabitleri.cs" />
+    <Compile Include="DonusturulecekKanunlar.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\KisaCalismaHucreBilgileri.cs" />
+    <Compile Include="Enums\NetsisHucreBilgileri.cs" />
+    <Compile Include="Enums\MufredatKartiHucreBilgileri.cs" />
+    <Compile Include="Enums\MosipEmanetHucreBilgileri.cs" />
+    <Compile Include="Enums\BankaIsverenEmanetHucreBilgileri.cs" />
+    <Compile Include="Enums\EgitimFormuHucreBilgileri.cs" />
+    <Compile Include="Enums\CariKisilerIseGirisCikisHucreBilgileri.cs" />
+    <Compile Include="Enums\CariKisilerHucreBilgileri.cs" />
+    <Compile Include="Enums\BildirgeHucreleri.cs" />
+    <Compile Include="Enums\BasvuruListesi7166SutunTurleri.cs" />
+    <Compile Include="Enums\GecerliSayfaSonuclari.cs" />
+    <Compile Include="Enums\AphbHucreBilgileri.cs" />
+    <Compile Include="Enums\EgitimBelgesiTurleri.cs" />
+    <Compile Include="Enums\BasvuruFormuTurleri.cs" />
+    <Compile Include="Enums\ProjeTurleri.cs" />
+    <Compile Include="Enums\FormTuru.cs" />
+    <Compile Include="Enums\BasvuruFormuSutunTurleri.cs" />
+    <Compile Include="frmSirketIndirmeEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSirketIndirmeEkrani.Designer.cs">
+      <DependentUpon>frmSirketIndirmeEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOnay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOnay.Designer.cs">
+      <DependentUpon>frmOnay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMesaj.Designer.cs">
+      <DependentUpon>frmMesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIndirmeEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndirmeEkrani.Designer.cs">
+      <DependentUpon>frmIndirmeEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIsyerleriSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIsyerleriSec.Designer.cs">
+      <DependentUpon>frmIsyerleriSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCari14857Listesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCari14857Listesi.Designer.cs">
+      <DependentUpon>frmCari14857Listesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTarihSecAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarihSecAyarlar.Designer.cs">
+      <DependentUpon>frmTarihSecAyarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Genel.cs" />
+    <Compile Include="Helper\ExtensionHelper.cs" />
+    <Compile Include="frmAsgariUcretler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsgariUcretler.Designer.cs">
+      <DependentUpon>frmAsgariUcretler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDataGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDataGoster.Designer.cs">
+      <DependentUpon>frmDataGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonusturulecekKanunlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonusturulecekKanunlar.Designer.cs">
+      <DependentUpon>frmDonusturulecekKanunlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListeHata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListeHata.Designer.cs">
+      <DependentUpon>frmListeHata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLog.Designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyarlar.Designer.cs">
+      <DependentUpon>frmAyarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSirketler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSirketler.Designer.cs">
+      <DependentUpon>frmSirketler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKisaVadeliSigortaPrimKollari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKisaVadeliSigortaPrimKollari.Designer.cs">
+      <DependentUpon>frmKisaVadeliSigortaPrimKollari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIsyeriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIsyeriEkle.Designer.cs">
+      <DependentUpon>frmIsyeriEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIsyerleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIsyerleri.Designer.cs">
+      <DependentUpon>frmIsyerleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBelgeTurleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBelgeTurleri.Designer.cs">
+      <DependentUpon>frmBelgeTurleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBildirgeOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBildirgeOlustur.Designer.cs">
+      <DependentUpon>frmBildirgeOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTarihSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarihSec.Designer.cs">
+      <DependentUpon>frmTarihSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Isyerleri.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KisaVadeliSigortaPrimKoluOranlari.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Metodlar\Isyeri6486Bul.cs" />
+    <Compile Include="Metodlar\AphbIcmalKaydet.cs" />
+    <Compile Include="Metodlar\AphbPdftenOku.cs" />
+    <Compile Include="Metodlar\MuhtasarOnaydaBekleyenAphbKaydet.cs" />
+    <Compile Include="Metodlar\MuhtasarOnayBekleyenleriCek.cs" />
+    <Compile Include="Metodlar\KanunNoDegisenlerKaydet.cs" />
+    <Compile Include="Metodlar\Yersiz7252Olustur.cs" />
+    <Compile Include="Metodlar\Liste7252Kaydet.cs" />
+    <Compile Include="Metodlar\Sistemden7252ListesiniCek.cs" />
+    <Compile Include="Metodlar\Yersiz7252Kaydet.cs" />
+    <Compile Include="Metodlar\TekSayfaBildirgeOlustur.cs" />
+    <Compile Include="Metodlar\SonAydaHerkesCikmisMi.cs" />
+    <Compile Include="Metodlar\SatirlarinIptalKarsiliklariniBul.cs" />
+    <Compile Include="Metodlar\KisaCalismaKaydet.cs" />
+    <Compile Include="Metodlar\NetsisExcelKaydet.cs" />
+    <Compile Include="Metodlar\CarpimOrani687Bul.cs" />
+    <Compile Include="Metodlar\MuhtasarCokluIcmalKaydet.cs" />
+    <Compile Include="Metodlar\Sistemden7103ListesiniCek.cs" />
+    <Compile Include="Metodlar\BildirgelerGenelIcmalKaydet.cs" />
+    <Compile Include="Metodlar\SirketCari14857IcindeVarMi.cs" />
+    <Compile Include="Metodlar\BazHesapla.cs" />
+    <Compile Include="Metodlar\MufredatKartlariniKaydet.cs" />
+    <Compile Include="Metodlar\MuhtasarXmldenIsyerleriniBul.cs" />
+    <Compile Include="Metodlar\MuhtasarXmldenCariOlustur.cs" />
+    <Compile Include="Metodlar\EmanetTahsilatlariKaydet.cs" />
+    <Compile Include="Metodlar\EgitimListesiKaydet.cs" />
+    <Compile Include="Metodlar\CariKisileriKaydet.cs" />
+    <Compile Include="Metodlar\CariAphbKaydet.cs" />
+    <Compile Include="Metodlar\KisaCalismaListesiOlustur.cs" />
+    <Compile Include="Metodlar\AphbIcmalOlustur.cs" />
+    <Compile Include="Metodlar\SistemdenBildirgelerinIcmaliniCek.cs" />
+    <Compile Include="Metodlar\BasvuruYap.cs" />
+    <Compile Include="Metodlar\SistemdenKisininGirisCikislariniBul.cs" />
+    <Compile Include="Metodlar\SistemdenMufredatKartiCek.cs" />
+    <Compile Include="Metodlar\SistemdenGirisBul.cs" />
+    <Compile Include="Metodlar\SistemdenEmanetTahsilatlariniCek.cs" />
+    <Compile Include="Metodlar\SistemdenMeslekKoduBul.cs" />
+    <Compile Include="Metodlar\TaseronNodanIsyeriBul.cs" />
+    <Compile Include="Metodlar\BasvuruListesi7166Yukle.cs" />
+    <Compile Include="Metodlar\AylikListeyiYukle.cs" />
+    <Compile Include="Metodlar\BasvuruListesiniYukle.cs" />
+    <Compile Include="Metodlar\CariDonemKisileriAPHByeEkle.cs" />
+    <Compile Include="Metodlar\GirisCikisGecerliSatirlariGetir.cs" />
+    <Compile Include="Metodlar\SatiraTesvikVerilecekMi.cs" />
+    <Compile Include="Metodlar\ReadExcelFile.cs" />
+    <Compile Include="Metodlar\BelgeTuruOranBul.cs" />
+    <Compile Include="Metodlar\BagliKanunlariGetir.cs" />
+    <Compile Include="Metodlar\GecerliSatirlariGetir.cs" />
+    <Compile Include="Metodlar\AktifBasvuruKaydiniGetir.cs" />
+    <Compile Include="Metodlar\HataliSatirlarKontroluYap.cs" />
+    <Compile Include="Metodlar\PathUpdate.cs" />
+    <Compile Include="Metodlar\KvskBul.cs" />
+    <Compile Include="Metodlar\AylikCalisanHesapla.cs" />
+    <Compile Include="Metodlar\AsgariUcretBul.cs" />
+    <Compile Include="Metodlar\FormBul.cs" />
+    <Compile Include="Metodlar\IsyeriKlasorBul.cs" />
+    <Compile Include="Metodlar\FormKaydet.cs" />
+    <Compile Include="Metodlar\SistemdenIstenCikisNedeniBul.cs" />
+    <Compile Include="Metodlar\TesvikTutariHesapla.cs" />
+    <Compile Include="Metodlar\TesvikKisileriGetir.cs" />
+    <Compile Include="Metodlar\TumKisileriGetir.cs" />
+    <Compile Include="Metodlar\TesvikBilgileriGetir.cs" />
+    <Compile Include="Metodlar\YardimciMetotlar.cs" />
+    <Compile Include="ModelDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Kisi.cs" />
+    <Compile Include="Classes\BelgeTuruIstatistikleri.cs" />
+    <Compile Include="Classes\KanunIstatistik.cs" />
+    <Compile Include="Classes\Cikti.cs" />
+    <Compile Include="Classes\Icmal.cs" />
+    <Compile Include="Classes\BazBilgisi.cs" />
+    <Compile Include="Classes\KisiTesvik.cs" />
+    <Compile Include="Classes\BazBilgileri.cs" />
+    <Compile Include="Classes\BasvuruKisi.cs" />
+    <Compile Include="Classes\TesvikKanunuIstatistik.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload687.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload6645.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload14857.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload6111.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload7103.cs" />
+    <Compile Include="Classes\BasvuruKisiDownload2828.cs" />
+    <Compile Include="Classes\Bildirge.cs" />
+    <Compile Include="Classes\AphbSatir.cs" />
+    <Compile Include="Classes\GirisCikisTarihleri.cs" />
+    <Compile Include="Classes\CookieAwareWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\IptalBildirgeIstatikleri.cs" />
+    <Compile Include="Classes\Tesvik.cs" />
+    <Compile Include="Classes\DonusturulecekKanun.cs" />
+    <Compile Include="Classes\TesvikAyIstatistik.cs" />
+    <Compile Include="Classes\BildirgeYuklemeIcmal.cs" />
+    <Compile Include="Classes\TesvikTutariIstatistik.cs" />
+    <Compile Include="Classes\DusulecekTutarIstastistik.cs" />
+    <Compile Include="Classes\BasvuruListesi7166Kisi.cs" />
+    <Compile Include="Classes\IstenCikisKaydi.cs" />
+    <Compile Include="Classes\ProjeGiris.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\BasvuruLog.cs" />
+    <Compile Include="Classes\YasakliKanun.cs" />
+    <Compile Include="Classes\UnutulanKisi.cs" />
+    <Compile Include="Classes\IsyeriListesiDTO.cs" />
+    <Compile Include="Classes\AylikCalisanDTO.cs" />
+    <Compile Include="Classes\AsgariUcretDTO.cs" />
+    <Compile Include="Classes\BasvuruDonemDTO.cs" />
+    <Compile Include="Classes\BorcluAyDTO.cs" />
+    <Compile Include="Classes\Statistic.cs" />
+    <Compile Include="NewExportExcelV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewExportExcelV2.Designer.cs">
+      <DependentUpon>NewExportExcelV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Consts\Sabitler.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sirketler.cs">
+      <DependentUpon>ModelDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\IslemTamamException.cs" />
+    <Content Include="x86\SQLite.Interop.dll" />
+    <EmbeddedResource Include="Captcha.resx">
+      <DependentUpon>Captcha.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsgariUcretler.resx">
+      <DependentUpon>frmAsgariUcretler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDataGoster.resx">
+      <DependentUpon>frmDataGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDonusturulecekKanunlar.resx">
+      <DependentUpon>frmDonusturulecekKanunlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSirketIndirmeEkrani.resx">
+      <DependentUpon>frmSirketIndirmeEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListeHata.resx">
+      <DependentUpon>frmListeHata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOnay.resx">
+      <DependentUpon>frmOnay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMesaj.resx">
+      <DependentUpon>frmMesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyarlar.resx">
+      <DependentUpon>frmAyarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCari14857Listesi.resx">
+      <DependentUpon>frmCari14857Listesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSirketler.resx">
+      <DependentUpon>frmSirketler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKisaVadeliSigortaPrimKollari.resx">
+      <DependentUpon>frmKisaVadeliSigortaPrimKollari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIsyeriEkle.resx">
+      <DependentUpon>frmIsyeriEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIsyerleri.resx">
+      <DependentUpon>frmIsyerleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBelgeTurleri.resx">
+      <DependentUpon>frmBelgeTurleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBildirgeOlustur.resx">
+      <DependentUpon>frmBildirgeOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIndirmeEkrani.resx">
+      <DependentUpon>frmIndirmeEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIsyerleriSec.resx">
+      <DependentUpon>frmIsyerleriSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarihSecAyarlar.resx">
+      <DependentUpon>frmTarihSecAyarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarihSec.resx">
+      <DependentUpon>frmTarihSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewExportExcelV2.resx">
+      <DependentUpon>NewExportExcelV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <EntityDeploy Include="ModelDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AylikCalisanIcmal.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BasvuruTemplate.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="DevExpress.Data.v17.1.dll" />
+    <None Include="DevExpress.Pdf.v17.1.Core.dll" />
+    <None Include="DevExpress.Printing.v17.1.Core.dll" />
+    <None Include="DevExpress.Utils.v17.1.dll" />
+    <None Include="DevExpress.XtraEditors.v17.1.dll" />
+    <None Include="DevExpress.XtraGrid.v17.1.dll" />
+    <None Include="DevExpress.XtraLayout.v14.2.dll" />
+    <None Include="DevExpress.XtraLayout.v17.1.dll" />
+    <None Include="DevExpress.XtraPrinting.v17.1.dll" />
+    <Content Include="EgitimBelgesiDilekce.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EgitimSablon.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ek9Ilk.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icmal.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="KisaCalismaSablon.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ListeTemplate.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ModelDb.edmx.diagram">
+      <DependentUpon>ModelDb.edmx</DependentUpon>
+    </None>
+    <Content Include="MufredatSablon.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NetsisExcelSablon.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Sablon7166.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SablonEmanet.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SablonKisiler.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\ambigs.train">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\api_config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\bigram">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\box.train">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\box.train.stderr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\digits">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\hocr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\inter">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\kannada">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\linebox">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\logfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\makebox">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\quiet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\rebox">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\strokewidth">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\configs\unlv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.bigrams">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.fold">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.lm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.lm_">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.nn">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.params">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.size">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.cube.word-freq">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.tesseract_cube.nn">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\eng.traineddata">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\osd.traineddata">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\tessconfigs\batch">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\tessconfigs\batch.nochop">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\tessconfigs\matdemo">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\tessconfigs\msdemo">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\tessconfigs\nobatch">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tessdata\tessconfigs\segdemo">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="TesvikProgrami_TemporaryKey.pfx" />
+    <Content Include="veri.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_3_by_astoyanov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gozat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaydet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaydetmini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bildirge.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="iconNew.ico" />
+    <None Include="Resources\button_bildirge-olustur.png" />
+    <None Include="Resources\button_icmal-olustur.png" />
+    <None Include="Resources\button_belge-turleri.png" />
+    <None Include="Resources\button_asgari-ucretler.png" />
+    <None Include="Resources\button_ayarlar.png" />
+    <None Include="Resources\button_sirketler.png" />
+    <None Include="Resources\button_isyerleri.png" />
+    <None Include="Resources\button_isyeri-ekle1.png" />
+    <Content Include="ModelDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDb.edmx</DependentUpon>
+      <LastGenOutput>ModelDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDb.edmx</DependentUpon>
+      <LastGenOutput>ModelDb.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\backgrounds-blank-blue-953214.jpg" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\iconNew.ico" />
+    <Content Include="ses.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\liblept172.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\libtesseract304.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\SQLite.Interop.dll" />
+    <Content Include="x86\liblept172.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libtesseract304.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Geri.png" />
+    <None Include="Resources\İleri.png" />
+    <None Include="Resources\IsyeriEkle.png" />
+    <None Include="Resources\IsyeriBilgileriniAl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="output\" />
+    <Folder Include="System\Windows\Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="TesvikProgrami.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('packages\squirrel.windows.1.9.1\build\squirrel.windows.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\squirrel.windows.1.9.1\build\squirrel.windows.props'))" />
+    <Error Condition="!Exists('packages\squirrel.windows.1.9.1\build\squirrel.windows.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\squirrel.windows.1.9.1\build\squirrel.windows.targets'))" />
+  </Target>
+  <Import Project="packages\squirrel.windows.1.9.1\build\squirrel.windows.targets" Condition="Exists('packages\squirrel.windows.1.9.1\build\squirrel.windows.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

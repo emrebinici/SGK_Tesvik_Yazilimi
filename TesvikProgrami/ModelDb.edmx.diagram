@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e60a3ea5ecf45dabe941dc8d5beb627" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="DataDb.Sirketler" Width="1.5" PointX="0.75" PointY="10.5" />
+        <EntityTypeShape EntityType="DataDb.AsgariUcretDestekTutarlari" Width="1.5" PointX="6.25" PointY="5.5" />
+        <EntityTypeShape EntityType="DataDb.BasvuruDonemleri" Width="1.5" PointX="3.625" PointY="6.5" />
+        <EntityTypeShape EntityType="DataDb.BelgeTurleri" Width="1.5" PointX="10.375" PointY="3.5" />
+        <EntityTypeShape EntityType="DataDb.BorcluAylar" Width="1.5" PointX="3.875" PointY="9.875" />
+        <EntityTypeShape EntityType="DataDb.AsgariUcretler" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DataDb.Isyerleri" Width="1.5" PointX="0.625" PointY="1.125" />
+        <AssociationConnector Association="DataDb.FK_AsgariUcretDestekTutarlari_0_0" />
+        <AssociationConnector Association="DataDb.FK_BasvuruDonemleri_0_0" />
+        <AssociationConnector Association="DataDb.FK_BorcluAylar_0_0" />
+        <AssociationConnector Association="DataDb.FK_Isyerleri_0_0" />
+        <EntityTypeShape EntityType="DataDb.Ayarlar" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DataDb.DonusturulecekKanunlar" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DataDb.KisaVadeliSigortaPrimKoluOranlari" Width="1.5" PointX="6.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DataDb.AylikCalisanSayilari" Width="1.5" PointX="3.875" PointY="3.125" />
+        <AssociationConnector Association="DataDb.FK_AylikCalisanSayilari_0_0" />
+        <EntityTypeShape EntityType="DataDb.Cari14857YapilanSirketler" Width="1.5" PointX="3" PointY="12.75" />
+        <AssociationConnector Association="DataDb.FK_Cari14857YapilanSirketler_0_0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

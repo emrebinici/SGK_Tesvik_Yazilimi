@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataDb.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=C:\Users\COMPUTER\Desktop\TP2\TesvikProgrami\TesvikProgrami\bin\Debug\veri.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AsgariUcretDestekTutarlari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsyeriID" Type="integer" Nullable="false" />
+          <Property Name="DonemYil" Type="integer" Nullable="false" />
+          <Property Name="DonemAy" Type="integer" Nullable="false" />
+          <Property Name="HesaplananGun" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AsgariUcretler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslangic" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Bitis" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="AsgariUcretTutari" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ayarlar">
+          <Key>
+            <PropertyRef Name="Anahtar" />
+          </Key>
+          <Property Name="Anahtar" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Deger" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AylikCalisanSayilari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsyeriID" Type="integer" Nullable="false" />
+          <Property Name="DonemYil" Type="integer" Nullable="false" />
+          <Property Name="DonemAy" Type="integer" Nullable="false" />
+          <Property Name="CalisanSayisiTaseronlu" Type="integer" Nullable="false" />
+          <Property Name="CalisanSayisiTaseronsuz" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BasvuruDonemleri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsyeriID" Type="integer" Nullable="false" />
+          <Property Name="BasvuruDonem" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Aylar" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="BelgeTurleri">
+          <Key>
+            <PropertyRef Name="BelgeTuruID" />
+          </Key>
+          <Property Name="BelgeTuruID" Type="integer" Nullable="false" />
+          <Property Name="MalulYaslilikOraniSigortali" Type="real" Nullable="false" />
+          <Property Name="MalulYaslilikOraniIsveren" Type="real" Nullable="false" />
+          <Property Name="GenelSaglikSigortali" Type="real" Nullable="false" />
+          <Property Name="GenelSaglikIsveren" Type="real" Nullable="false" />
+          <Property Name="SosyalDestekSigortali" Type="real" Nullable="false" />
+          <Property Name="SosyalDestekIsveren" Type="real" Nullable="false" />
+          <Property Name="IssizlikSigortali" Type="real" Nullable="false" />
+          <Property Name="IssizlikIsveren" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BorcluAylar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsyeriID" Type="integer" Nullable="false" />
+          <Property Name="BorcluAy" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cari14857YapilanSirketler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SirketId" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DonusturulecekKanunlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TesvikKanunNo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="DonusturulenKanunNo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="SadeceCari" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Isyerleri">
+          <Key>
+            <PropertyRef Name="IsyeriID" />
+          </Key>
+          <Property Name="IsyeriID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SirketID" Type="integer" Nullable="false" />
+          <Property Name="SubeAdi" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IsyeriSicilNo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="TaseronNo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="SosyalGuvenlikKurumu" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Aktif" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="KullaniciKod" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="SistemSifresi" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsyeriSifresi" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="BasvuruFormu" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Aphb" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="BasvuruListesi7166" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenAdSoyad" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenUnvan" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenAdres" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenSemt" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenIlce" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenIl" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenDisKapiNo" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenIcKapiNo" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenPostaKodu" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenTelefon" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IsverenEposta" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenAdSoyad" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenUnvan" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenTcKimlikNo" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenAdres" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenSemt" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenIlce" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenIl" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenDisKapiNo" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenIcKapiNo" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenPostaKodu" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenTelefon" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AltIsverenEposta" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="KisaVadeliSigortaPrimKoluOranlari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KisaVadeliSigortaKoluKodu" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="PrimOrani" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sirketler">
+          <Key>
+            <PropertyRef Name="SirketID" />
+          </Key>
+          <Property Name="SirketID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SirketAdi" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="VergiKimlikNo" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Aktif" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AsgariUcretDestekTutarlari_0_0">
+          <End Role="Isyerleri" Type="Self.Isyerleri" Multiplicity="1" />
+          <End Role="AsgariUcretDestekTutarlari" Type="Self.AsgariUcretDestekTutarlari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="AsgariUcretDestekTutarlari">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AylikCalisanSayilari_0_0">
+          <End Role="Isyerleri" Type="Self.Isyerleri" Multiplicity="1" />
+          <End Role="AylikCalisanSayilari" Type="Self.AylikCalisanSayilari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="AylikCalisanSayilari">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasvuruDonemleri_0_0">
+          <End Role="Isyerleri" Type="Self.Isyerleri" Multiplicity="1" />
+          <End Role="BasvuruDonemleri" Type="Self.BasvuruDonemleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="BasvuruDonemleri">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BorcluAylar_0_0">
+          <End Role="Isyerleri" Type="Self.Isyerleri" Multiplicity="1" />
+          <End Role="BorcluAylar" Type="Self.BorcluAylar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="BorcluAylar">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cari14857YapilanSirketler_0_0">
+          <End Role="Sirketler" Type="Self.Sirketler" Multiplicity="1" />
+          <End Role="Cari14857YapilanSirketler" Type="Self.Cari14857YapilanSirketler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketler">
+              <PropertyRef Name="SirketID" />
+            </Principal>
+            <Dependent Role="Cari14857YapilanSirketler">
+              <PropertyRef Name="SirketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Isyerleri_0_0">
+          <End Role="Sirketler" Type="Self.Sirketler" Multiplicity="1" />
+          <End Role="Isyerleri" Type="Self.Isyerleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketler">
+              <PropertyRef Name="SirketID" />
+            </Principal>
+            <Dependent Role="Isyerleri">
+              <PropertyRef Name="SirketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataDbStoreContainer">
+          <EntitySet Name="AsgariUcretDestekTutarlari" EntityType="Self.AsgariUcretDestekTutarlari" store:Type="Tables" />
+          <EntitySet Name="AsgariUcretler" EntityType="Self.AsgariUcretler" store:Type="Tables" />
+          <EntitySet Name="Ayarlar" EntityType="Self.Ayarlar" store:Type="Tables" />
+          <EntitySet Name="AylikCalisanSayilari" EntityType="Self.AylikCalisanSayilari" store:Type="Tables" />
+          <EntitySet Name="BasvuruDonemleri" EntityType="Self.BasvuruDonemleri" store:Type="Tables" />
+          <EntitySet Name="BelgeTurleri" EntityType="Self.BelgeTurleri" store:Type="Tables" />
+          <EntitySet Name="BorcluAylar" EntityType="Self.BorcluAylar" store:Type="Tables" />
+          <EntitySet Name="Cari14857YapilanSirketler" EntityType="Self.Cari14857YapilanSirketler" store:Type="Tables" />
+          <EntitySet Name="DonusturulecekKanunlar" EntityType="Self.DonusturulecekKanunlar" store:Type="Tables" />
+          <EntitySet Name="Isyerleri" EntityType="Self.Isyerleri" store:Type="Tables" />
+          <EntitySet Name="KisaVadeliSigortaPrimKoluOranlari" EntityType="Self.KisaVadeliSigortaPrimKoluOranlari" store:Type="Tables" />
+          <EntitySet Name="Sirketler" EntityType="Self.Sirketler" store:Type="Tables" />
+          <AssociationSet Name="FK_AsgariUcretDestekTutarlari_0_0" Association="Self.FK_AsgariUcretDestekTutarlari_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="AsgariUcretDestekTutarlari" EntitySet="AsgariUcretDestekTutarlari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AylikCalisanSayilari_0_0" Association="Self.FK_AylikCalisanSayilari_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="AylikCalisanSayilari" EntitySet="AylikCalisanSayilari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasvuruDonemleri_0_0" Association="Self.FK_BasvuruDonemleri_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="BasvuruDonemleri" EntitySet="BasvuruDonemleri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BorcluAylar_0_0" Association="Self.FK_BorcluAylar_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="BorcluAylar" EntitySet="BorcluAylar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cari14857YapilanSirketler_0_0" Association="Self.FK_Cari14857YapilanSirketler_0_0">
+            <End Role="Sirketler" EntitySet="Sirketler" />
+            <End Role="Cari14857YapilanSirketler" EntitySet="Cari14857YapilanSirketler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Isyerleri_0_0" Association="Self.FK_Isyerleri_0_0">
+            <End Role="Sirketler" EntitySet="Sirketler" />
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sirketler" EntityType="DataDb.Sirketler" />
+          <EntitySet Name="AsgariUcretDestekTutarlari" EntityType="DataDb.AsgariUcretDestekTutarlari" />
+          <EntitySet Name="BasvuruDonemleri" EntityType="DataDb.BasvuruDonemleri" />
+          <EntitySet Name="BelgeTurleri" EntityType="DataDb.BelgeTurleri" />
+          <EntitySet Name="BorcluAylar" EntityType="DataDb.BorcluAylar" />
+          <EntitySet Name="AsgariUcretler" EntityType="DataDb.AsgariUcretler" />
+          <EntitySet Name="Isyerleri" EntityType="DataDb.Isyerleri" />
+          <AssociationSet Name="FK_AsgariUcretDestekTutarlari_0_0" Association="DataDb.FK_AsgariUcretDestekTutarlari_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="AsgariUcretDestekTutarlari" EntitySet="AsgariUcretDestekTutarlari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasvuruDonemleri_0_0" Association="DataDb.FK_BasvuruDonemleri_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="BasvuruDonemleri" EntitySet="BasvuruDonemleri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BorcluAylar_0_0" Association="DataDb.FK_BorcluAylar_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="BorcluAylar" EntitySet="BorcluAylar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Isyerleri_0_0" Association="DataDb.FK_Isyerleri_0_0">
+            <End Role="Sirketler" EntitySet="Sirketler" />
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+          </AssociationSet>
+          <EntitySet Name="Ayarlar" EntityType="DataDb.Ayarlar" />
+          <EntitySet Name="DonusturulecekKanunlar" EntityType="DataDb.DonusturulecekKanunlar" />
+          <EntitySet Name="KisaVadeliSigortaPrimKoluOranlari" EntityType="DataDb.KisaVadeliSigortaPrimKoluOranlari" />
+          <EntitySet Name="AylikCalisanSayilari" EntityType="DataDb.AylikCalisanSayilari" />
+          <AssociationSet Name="FK_AylikCalisanSayilari_0_0" Association="DataDb.FK_AylikCalisanSayilari_0_0">
+            <End Role="Isyerleri" EntitySet="Isyerleri" />
+            <End Role="AylikCalisanSayilari" EntitySet="AylikCalisanSayilari" />
+          </AssociationSet>
+          <EntitySet Name="Cari14857YapilanSirketler" EntityType="DataDb.Cari14857YapilanSirketler" />
+          <AssociationSet Name="FK_Cari14857YapilanSirketler_0_0" Association="DataDb.FK_Cari14857YapilanSirketler_0_0">
+            <End Role="Sirketler" EntitySet="Sirketler" />
+            <End Role="Cari14857YapilanSirketler" EntitySet="Cari14857YapilanSirketler" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Sirketler">
+          <Key>
+            <PropertyRef Name="SirketID" />
+          </Key>
+          <Property Name="SirketID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SirketAdi" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="VergiKimlikNo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Aktif" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Isyerleri" Relationship="DataDb.FK_Isyerleri_0_0" FromRole="Sirketler" ToRole="Isyerleri" />
+          <NavigationProperty Name="Cari14857YapilanSirketler" Relationship="DataDb.FK_Cari14857YapilanSirketler_0_0" FromRole="Sirketler" ToRole="Cari14857YapilanSirketler" />
+        </EntityType>
+        <EntityType Name="AsgariUcretDestekTutarlari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsyeriID" Type="Int64" Nullable="false" />
+          <Property Name="DonemYil" Type="Int64" Nullable="false" />
+          <Property Name="DonemAy" Type="Int64" Nullable="false" />
+          <Property Name="HesaplananGun" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Isyerleri" Relationship="DataDb.FK_AsgariUcretDestekTutarlari_0_0" FromRole="AsgariUcretDestekTutarlari" ToRole="Isyerleri" />
+        </EntityType>
+        <EntityType Name="BasvuruDonemleri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsyeriID" Type="Int64" Nullable="false" />
+          <Property Name="BasvuruDonem" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Aylar" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Isyerleri" Relationship="DataDb.FK_BasvuruDonemleri_0_0" FromRole="BasvuruDonemleri" ToRole="Isyerleri" />
+        </EntityType>
+        <EntityType Name="BelgeTurleri">
+          <Key>
+            <PropertyRef Name="BelgeTuruID" />
+          </Key>
+          <Property Name="BelgeTuruID" Type="Int64" Nullable="false" />
+          <Property Name="MalulYaslilikOraniSigortali" Type="Double" Nullable="false" />
+          <Property Name="MalulYaslilikOraniIsveren" Type="Double" Nullable="false" />
+          <Property Name="GenelSaglikSigortali" Type="Double" Nullable="false" />
+          <Property Name="GenelSaglikIsveren" Type="Double" Nullable="false" />
+          <Property Name="SosyalDestekSigortali" Type="Double" Nullable="false" />
+          <Property Name="SosyalDestekIsveren" Type="Double" Nullable="false" />
+          <Property Name="IssizlikSigortali" Type="Double" Nullable="false" />
+          <Property Name="IssizlikIsveren" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BorcluAylar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsyeriID" Type="Int64" Nullable="false" />
+          <Property Name="BorcluAy" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Isyerleri" Relationship="DataDb.FK_BorcluAylar_0_0" FromRole="BorcluAylar" ToRole="Isyerleri" />
+        </EntityType>
+        <EntityType Name="AsgariUcretler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslangic" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Bitis" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AsgariUcretTutari" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Isyerleri">
+          <Key>
+            <PropertyRef Name="IsyeriID" />
+          </Key>
+          <Property Name="IsyeriID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SirketID" Type="Int64" Nullable="false" />
+          <Property Name="SubeAdi" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsyeriSicilNo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TaseronNo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="SosyalGuvenlikKurumu" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Aktif" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="KullaniciKod" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="SistemSifresi" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsyeriSifresi" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="BasvuruFormu" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Aphb" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="BasvuruListesi7166" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenAdSoyad" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenUnvan" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenAdres" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenSemt" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenIlce" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenIl" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenDisKapiNo" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenIcKapiNo" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenPostaKodu" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenTelefon" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IsverenEposta" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenAdSoyad" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenUnvan" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenTcKimlikNo" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenAdres" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenSemt" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenIlce" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenIl" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenDisKapiNo" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenIcKapiNo" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenPostaKodu" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenTelefon" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AltIsverenEposta" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AsgariUcretDestekTutarlari" Relationship="DataDb.FK_AsgariUcretDestekTutarlari_0_0" FromRole="Isyerleri" ToRole="AsgariUcretDestekTutarlari" />
+          <NavigationProperty Name="BasvuruDonemleri" Relationship="DataDb.FK_BasvuruDonemleri_0_0" FromRole="Isyerleri" ToRole="BasvuruDonemleri" />
+          <NavigationProperty Name="BorcluAylar" Relationship="DataDb.FK_BorcluAylar_0_0" FromRole="Isyerleri" ToRole="BorcluAylar" />
+          <NavigationProperty Name="Sirketler" Relationship="DataDb.FK_Isyerleri_0_0" FromRole="Isyerleri" ToRole="Sirketler" />
+          <NavigationProperty Name="AylikCalisanSayilari" Relationship="DataDb.FK_AylikCalisanSayilari_0_0" FromRole="Isyerleri" ToRole="AylikCalisanSayilari" />
+        </EntityType>
+        <Association Name="FK_AsgariUcretDestekTutarlari_0_0">
+          <End Type="DataDb.Isyerleri" Role="Isyerleri" Multiplicity="1" />
+          <End Type="DataDb.AsgariUcretDestekTutarlari" Role="AsgariUcretDestekTutarlari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="AsgariUcretDestekTutarlari">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasvuruDonemleri_0_0">
+          <End Type="DataDb.Isyerleri" Role="Isyerleri" Multiplicity="1" />
+          <End Type="DataDb.BasvuruDonemleri" Role="BasvuruDonemleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="BasvuruDonemleri">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BorcluAylar_0_0">
+          <End Type="DataDb.Isyerleri" Role="Isyerleri" Multiplicity="1" />
+          <End Type="DataDb.BorcluAylar" Role="BorcluAylar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="BorcluAylar">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Isyerleri_0_0">
+          <End Type="DataDb.Sirketler" Role="Sirketler" Multiplicity="1" />
+          <End Type="DataDb.Isyerleri" Role="Isyerleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketler">
+              <PropertyRef Name="SirketID" />
+            </Principal>
+            <Dependent Role="Isyerleri">
+              <PropertyRef Name="SirketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ayarlar">
+          <Key>
+            <PropertyRef Name="Anahtar" />
+          </Key>
+          <Property Name="Anahtar" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Deger" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DonusturulecekKanunlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TesvikKanunNo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="DonusturulenKanunNo" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="SadeceCari" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+        </EntityType>
+        <EntityType Name="KisaVadeliSigortaPrimKoluOranlari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KisaVadeliSigortaKoluKodu" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PrimOrani" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AylikCalisanSayilari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsyeriID" Type="Int64" Nullable="false" />
+          <Property Name="DonemYil" Type="Int64" Nullable="false" />
+          <Property Name="DonemAy" Type="Int64" Nullable="false" />
+          <Property Name="CalisanSayisiTaseronlu" Type="Int64" Nullable="false" />
+          <Property Name="CalisanSayisiTaseronsuz" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Isyerleri" Relationship="DataDb.FK_AylikCalisanSayilari_0_0" FromRole="AylikCalisanSayilari" ToRole="Isyerleri" />
+        </EntityType>
+        <Association Name="FK_AylikCalisanSayilari_0_0">
+          <End Type="DataDb.Isyerleri" Role="Isyerleri" Multiplicity="1" />
+          <End Type="DataDb.AylikCalisanSayilari" Role="AylikCalisanSayilari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isyerleri">
+              <PropertyRef Name="IsyeriID" />
+            </Principal>
+            <Dependent Role="AylikCalisanSayilari">
+              <PropertyRef Name="IsyeriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cari14857YapilanSirketler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SirketId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Sirketler" Relationship="DataDb.FK_Cari14857YapilanSirketler_0_0" FromRole="Cari14857YapilanSirketler" ToRole="Sirketler" />
+        </EntityType>
+        <Association Name="FK_Cari14857YapilanSirketler_0_0">
+          <End Type="DataDb.Sirketler" Role="Sirketler" Multiplicity="1" />
+          <End Type="DataDb.Cari14857YapilanSirketler" Role="Cari14857YapilanSirketler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sirketler">
+              <PropertyRef Name="SirketID" />
+            </Principal>
+            <Dependent Role="Cari14857YapilanSirketler">
+              <PropertyRef Name="SirketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataDbStoreContainer" CdmEntityContainer="DbEntities">
+          <EntitySetMapping Name="Sirketler">
+            <EntityTypeMapping TypeName="DataDb.Sirketler">
+              <MappingFragment StoreEntitySet="Sirketler">
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="VergiKimlikNo" ColumnName="VergiKimlikNo" />
+                <ScalarProperty Name="SirketAdi" ColumnName="SirketAdi" />
+                <ScalarProperty Name="SirketID" ColumnName="SirketID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsgariUcretDestekTutarlari">
+            <EntityTypeMapping TypeName="DataDb.AsgariUcretDestekTutarlari">
+              <MappingFragment StoreEntitySet="AsgariUcretDestekTutarlari">
+                <ScalarProperty Name="HesaplananGun" ColumnName="HesaplananGun" />
+                <ScalarProperty Name="DonemAy" ColumnName="DonemAy" />
+                <ScalarProperty Name="DonemYil" ColumnName="DonemYil" />
+                <ScalarProperty Name="IsyeriID" ColumnName="IsyeriID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BasvuruDonemleri">
+            <EntityTypeMapping TypeName="DataDb.BasvuruDonemleri">
+              <MappingFragment StoreEntitySet="BasvuruDonemleri">
+                <ScalarProperty Name="Aylar" ColumnName="Aylar" />
+                <ScalarProperty Name="BasvuruDonem" ColumnName="BasvuruDonem" />
+                <ScalarProperty Name="IsyeriID" ColumnName="IsyeriID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BelgeTurleri">
+            <EntityTypeMapping TypeName="DataDb.BelgeTurleri">
+              <MappingFragment StoreEntitySet="BelgeTurleri">
+                <ScalarProperty Name="IssizlikIsveren" ColumnName="IssizlikIsveren" />
+                <ScalarProperty Name="IssizlikSigortali" ColumnName="IssizlikSigortali" />
+                <ScalarProperty Name="SosyalDestekIsveren" ColumnName="SosyalDestekIsveren" />
+                <ScalarProperty Name="SosyalDestekSigortali" ColumnName="SosyalDestekSigortali" />
+                <ScalarProperty Name="GenelSaglikIsveren" ColumnName="GenelSaglikIsveren" />
+                <ScalarProperty Name="GenelSaglikSigortali" ColumnName="GenelSaglikSigortali" />
+                <ScalarProperty Name="MalulYaslilikOraniIsveren" ColumnName="MalulYaslilikOraniIsveren" />
+                <ScalarProperty Name="MalulYaslilikOraniSigortali" ColumnName="MalulYaslilikOraniSigortali" />
+                <ScalarProperty Name="BelgeTuruID" ColumnName="BelgeTuruID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BorcluAylar">
+            <EntityTypeMapping TypeName="DataDb.BorcluAylar">
+              <MappingFragment StoreEntitySet="BorcluAylar">
+                <ScalarProperty Name="BorcluAy" ColumnName="BorcluAy" />
+                <ScalarProperty Name="IsyeriID" ColumnName="IsyeriID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsgariUcretler">
+            <EntityTypeMapping TypeName="DataDb.AsgariUcretler">
+              <MappingFragment StoreEntitySet="AsgariUcretler">
+                <ScalarProperty Name="AsgariUcretTutari" ColumnName="AsgariUcretTutari" />
+                <ScalarProperty Name="Bitis" ColumnName="Bitis" />
+                <ScalarProperty Name="Baslangic" ColumnName="Baslangic" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Isyerleri">
+            <EntityTypeMapping TypeName="DataDb.Isyerleri">
+              <MappingFragment StoreEntitySet="Isyerleri">
+                <ScalarProperty Name="AltIsverenEposta" ColumnName="AltIsverenEposta" />
+                <ScalarProperty Name="AltIsverenTelefon" ColumnName="AltIsverenTelefon" />
+                <ScalarProperty Name="AltIsverenPostaKodu" ColumnName="AltIsverenPostaKodu" />
+                <ScalarProperty Name="AltIsverenIcKapiNo" ColumnName="AltIsverenIcKapiNo" />
+                <ScalarProperty Name="AltIsverenDisKapiNo" ColumnName="AltIsverenDisKapiNo" />
+                <ScalarProperty Name="AltIsverenIl" ColumnName="AltIsverenIl" />
+                <ScalarProperty Name="AltIsverenIlce" ColumnName="AltIsverenIlce" />
+                <ScalarProperty Name="AltIsverenSemt" ColumnName="AltIsverenSemt" />
+                <ScalarProperty Name="AltIsverenAdres" ColumnName="AltIsverenAdres" />
+                <ScalarProperty Name="AltIsverenTcKimlikNo" ColumnName="AltIsverenTcKimlikNo" />
+                <ScalarProperty Name="AltIsverenUnvan" ColumnName="AltIsverenUnvan" />
+                <ScalarProperty Name="AltIsverenAdSoyad" ColumnName="AltIsverenAdSoyad" />
+                <ScalarProperty Name="IsverenEposta" ColumnName="IsverenEposta" />
+                <ScalarProperty Name="IsverenTelefon" ColumnName="IsverenTelefon" />
+                <ScalarProperty Name="IsverenPostaKodu" ColumnName="IsverenPostaKodu" />
+                <ScalarProperty Name="IsverenIcKapiNo" ColumnName="IsverenIcKapiNo" />
+                <ScalarProperty Name="IsverenDisKapiNo" ColumnName="IsverenDisKapiNo" />
+                <ScalarProperty Name="IsverenIl" ColumnName="IsverenIl" />
+                <ScalarProperty Name="IsverenIlce" ColumnName="IsverenIlce" />
+                <ScalarProperty Name="IsverenSemt" ColumnName="IsverenSemt" />
+                <ScalarProperty Name="IsverenAdres" ColumnName="IsverenAdres" />
+                <ScalarProperty Name="IsverenUnvan" ColumnName="IsverenUnvan" />
+                <ScalarProperty Name="IsverenAdSoyad" ColumnName="IsverenAdSoyad" />
+                <ScalarProperty Name="BasvuruListesi7166" ColumnName="BasvuruListesi7166" />
+                <ScalarProperty Name="Aphb" ColumnName="Aphb" />
+                <ScalarProperty Name="BasvuruFormu" ColumnName="BasvuruFormu" />
+                <ScalarProperty Name="IsyeriSifresi" ColumnName="IsyeriSifresi" />
+                <ScalarProperty Name="SistemSifresi" ColumnName="SistemSifresi" />
+                <ScalarProperty Name="KullaniciKod" ColumnName="KullaniciKod" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="SosyalGuvenlikKurumu" ColumnName="SosyalGuvenlikKurumu" />
+                <ScalarProperty Name="TaseronNo" ColumnName="TaseronNo" />
+                <ScalarProperty Name="IsyeriSicilNo" ColumnName="IsyeriSicilNo" />
+                <ScalarProperty Name="SubeAdi" ColumnName="SubeAdi" />
+                <ScalarProperty Name="SirketID" ColumnName="SirketID" />
+                <ScalarProperty Name="IsyeriID" ColumnName="IsyeriID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ayarlar">
+            <EntityTypeMapping TypeName="DataDb.Ayarlar">
+              <MappingFragment StoreEntitySet="Ayarlar">
+                <ScalarProperty Name="Deger" ColumnName="Deger" />
+                <ScalarProperty Name="Anahtar" ColumnName="Anahtar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonusturulecekKanunlar">
+            <EntityTypeMapping TypeName="DataDb.DonusturulecekKanunlar">
+              <MappingFragment StoreEntitySet="DonusturulecekKanunlar">
+                <ScalarProperty Name="SadeceCari" ColumnName="SadeceCari" />
+                <ScalarProperty Name="DonusturulenKanunNo" ColumnName="DonusturulenKanunNo" />
+                <ScalarProperty Name="TesvikKanunNo" ColumnName="TesvikKanunNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KisaVadeliSigortaPrimKoluOranlari">
+            <EntityTypeMapping TypeName="DataDb.KisaVadeliSigortaPrimKoluOranlari">
+              <MappingFragment StoreEntitySet="KisaVadeliSigortaPrimKoluOranlari">
+                <ScalarProperty Name="PrimOrani" ColumnName="PrimOrani" />
+                <ScalarProperty Name="KisaVadeliSigortaKoluKodu" ColumnName="KisaVadeliSigortaKoluKodu" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AylikCalisanSayilari">
+            <EntityTypeMapping TypeName="DataDb.AylikCalisanSayilari">
+              <MappingFragment StoreEntitySet="AylikCalisanSayilari">
+                <ScalarProperty Name="CalisanSayisiTaseronsuz" ColumnName="CalisanSayisiTaseronsuz" />
+                <ScalarProperty Name="CalisanSayisiTaseronlu" ColumnName="CalisanSayisiTaseronlu" />
+                <ScalarProperty Name="DonemAy" ColumnName="DonemAy" />
+                <ScalarProperty Name="DonemYil" ColumnName="DonemYil" />
+                <ScalarProperty Name="IsyeriID" ColumnName="IsyeriID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cari14857YapilanSirketler">
+            <EntityTypeMapping TypeName="DataDb.Cari14857YapilanSirketler">
+              <MappingFragment StoreEntitySet="Cari14857YapilanSirketler">
+                <ScalarProperty Name="SirketId" ColumnName="SirketId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
