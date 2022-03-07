@@ -1098,7 +1098,7 @@ namespace TesvikProgrami
 
             #region Netsis Excel Bildirge Yeni
             {
-                var bildirgeler = Directory.GetFiles(klasor, "*.xls", SearchOption.AllDirectories).ToList();
+                var bildirgeler = Directory.GetFiles(klasor, "*.xls*", SearchOption.AllDirectories).ToList();
 
                 var referanslar = new Dictionary<DataRow, DataRow>();
 

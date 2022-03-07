@@ -11,6 +11,7 @@ using System.Xml;
 using System.Linq;
 using System.Management;
 using TesvikProgrami.Classes;
+using System.Globalization;
 
 namespace TesvikProgrami
 {
@@ -82,6 +83,16 @@ namespace TesvikProgrami
         [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlAppDomain)]
         static void Main()
         {
+            var culture = CultureInfo.GetCultureInfo("tr-TR");
+
+            // var culture = new CultureInfo("en-US");
+
+            //Culture for any thread
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+
+            //Culture for UI in any thread
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
             // Add the event handler for handling UI thread exceptions to the event.
             Application.ThreadException += new ThreadExceptionEventHandler(Form1_UIThreadException);
 

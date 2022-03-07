@@ -44,7 +44,7 @@ namespace TesvikProgrami
 
                         var workbooks = Excelim.Workbooks;
 
-                        Excel2.Workbook CalismaKitabi = workbooks.Open(Path.Combine(Application.StartupPath, "NetsisExcelSablon.xls"));
+                        Excel2.Workbook CalismaKitabi = dt.Columns.Count == 33 ? workbooks.Open(Path.Combine(Application.StartupPath, "NetsisExcelSablon33.xls")) : workbooks.Open(Path.Combine(Application.StartupPath, "NetsisExcelSablon36.xls"));
                         Excel2.Worksheet CalismaSayfasi = (Excel2.Worksheet)CalismaKitabi.ActiveSheet;
 
                         var cells = CalismaSayfasi.Cells;
@@ -107,7 +107,7 @@ namespace TesvikProgrami
                                 {
                                     CalismaKitabi.Close(false);
 
-                                    CalismaKitabi = workbooks.Open(Path.Combine(Application.StartupPath, "NetsisExcelSablon.xls"));
+                                    CalismaKitabi = dt.Columns.Count == 33 ? workbooks.Open(Path.Combine(Application.StartupPath, "NetsisExcelSablon33.xls")) : workbooks.Open(Path.Combine(Application.StartupPath, "NetsisExcelSablon36.xls"));
                                     CalismaSayfasi = (Excel2.Worksheet)CalismaKitabi.ActiveSheet;
 
                                     HafizadanAtilacaklar.AddRange(new List<object> { CalismaKitabi, CalismaSayfasi });

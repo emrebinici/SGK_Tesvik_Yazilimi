@@ -4193,7 +4193,7 @@ namespace TesvikProgrami.Classes
 
                                 DataTable dtNetsisExcel = new DataTable("NetsisExcel");
 
-                                for (int i = 0; i < 33; i++)
+                                for (int i = 0; i < netsisBildirgeExcel[0].Length; i++)
                                 {
                                     dtNetsisExcel.Columns.Add();
                                 }

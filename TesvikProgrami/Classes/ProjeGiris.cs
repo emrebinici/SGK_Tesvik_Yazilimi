@@ -7,7 +7,6 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
-using Tesseract;
 
 namespace TesvikProgrami.Classes
 {
