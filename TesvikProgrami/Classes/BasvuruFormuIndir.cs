@@ -823,7 +823,7 @@ namespace TesvikProgrami.Classes
             catch (Exception ex)
             {
                 Metodlar.HataMesajiGoster(ex, "Başvuru formu indirme işlemi esnasında beklenmedik bir hata oluştu");
-                
+
                 throw ex;
             }
         }
@@ -3781,9 +3781,10 @@ namespace TesvikProgrami.Classes
                                                                                                         }
                                                                                                     }
 
+                                                                                                    //6111 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
                                                                                                 }
@@ -3830,10 +3831,9 @@ namespace TesvikProgrami.Classes
                                                                                                         }
 
                                                                                                     }
-
+                                                                                                    //17103 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
-                                                                                                    if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
 
@@ -3867,10 +3867,9 @@ namespace TesvikProgrami.Classes
                                                                                                         }
 
                                                                                                     }
-
+                                                                                                    //2828 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
-                                                                                                    if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
                                                                                                 }
@@ -3904,10 +3903,9 @@ namespace TesvikProgrami.Classes
                                                                                                         }
 
                                                                                                     }
-
+                                                                                                    //7252 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
-                                                                                                    if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
                                                                                                 }
@@ -3944,10 +3942,9 @@ namespace TesvikProgrami.Classes
                                                                                                         }
 
                                                                                                     }
-
+                                                                                                    //27256 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
-                                                                                                    if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
 
@@ -3985,10 +3982,9 @@ namespace TesvikProgrami.Classes
                                                                                                         }
 
                                                                                                     }
-
+                                                                                                    //7316 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
-                                                                                                    if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
 
@@ -4024,10 +4020,9 @@ namespace TesvikProgrami.Classes
                                                                                                         }
 
                                                                                                     }
-
+                                                                                                    //3294 hata tanımlamaları
                                                                                                     if (table.InnerText.Contains("Sistemsel bir hata oluştu")) sistemHatasiUyarisiVar = true;
-                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi")) icUygulamayaEriselemediUyarisiVar = true;
-                                                                                                    if (table.InnerText.Contains("İşyeri bilgilerini doğru girdiğinizden emin olunuz")) isyeriBilgileriniKontrolEdinizUyarisiVar = true;
+                                                                                                    if (table.InnerText.ToLower().Contains("iç uygulamaya erişilemedi") || table.InnerText.ToLower().Contains("iç uygulamaya, (işkur kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.Contains("İç uygulamaya, (ISKUR kaydı sorgu sonucu) erişilemedi daha sonra tekrar deneyiniz.") || table.InnerText.ToLower().Contains("erişilemedi") || table.InnerText.ToLower().Contains("sonra") || table.InnerText.ToLower().Contains("tekrar") || table.InnerText.ToLower().Contains("deneyiniz")) icUygulamayaEriselemediUyarisiVar = true;
                                                                                                     if (table.InnerText.Contains("Web Servis Şu Anda Çalışmıyor")) webServisUyarisiVar = true;
                                                                                                     if (table.InnerText.ToLower().Contains("too many open files")) tooManyOpenFilesUyarisiVar = true;
 
@@ -5903,7 +5898,7 @@ namespace TesvikProgrami.Classes
                     if (bfsira == Enums.BasvuruFormuTurleri.BfTumu)
                     {
                         string response = null;
-                        
+
                         if (CariTanimla)
                         {
                             siradakiIslem = "3294/SOSYAL YARDIM ALANLARIN İSTİHDAMI LİSTELEME/SİLME AÇILACAK";
@@ -5917,7 +5912,7 @@ namespace TesvikProgrami.Classes
                             response = webclient.Get("https://uyg.sgk.gov.tr/IsverenSistemi/internetLinkTesvik444730Liste.action;", string.Empty);
                         }
 
-                        
+
 
                         YuklenenSayfaninIciniDolas(response);
 
@@ -6254,8 +6249,8 @@ namespace TesvikProgrami.Classes
             {
                 ae.Handle(ex =>
                 {
-                    Metodlar.HataMesajiGoster(ex,"BF İndirme Hatası");
-                    
+                    Metodlar.HataMesajiGoster(ex, "BF İndirme Hatası");
+
                     return false;
                 });
 
@@ -6725,7 +6720,7 @@ namespace TesvikProgrami.Classes
                 }
 
 
-                if (bfsira == Enums.BasvuruFormuTurleri.Bf7252 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && ! CariTanimla))
+                if (bfsira == Enums.BasvuruFormuTurleri.Bf7252 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && !CariTanimla))
                 {
                     DataTable dtbasvuru = new DataTable("dtBasvuruFormu7252");
 
@@ -6773,7 +6768,7 @@ namespace TesvikProgrami.Classes
                     DataTables.Add("27256", dtbasvuru27256);
                 }
 
-                if (bfsira == Enums.BasvuruFormuTurleri.Bf7316 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && ! CariTanimla))
+                if (bfsira == Enums.BasvuruFormuTurleri.Bf7316 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && !CariTanimla))
                 {
                     DataTable dtbasvuru7316 = new DataTable("dtBasvuruFormu7316");
 
@@ -7007,7 +7002,7 @@ namespace TesvikProgrami.Classes
 
                     }
 
-                    if (bfsira == Enums.BasvuruFormuTurleri.Bf7252 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && ! CariTanimla))
+                    if (bfsira == Enums.BasvuruFormuTurleri.Bf7252 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && !CariTanimla))
                     {
                         dtbasvuru = ds.Tables.Count > 6 ? ds.Tables[6] : null;
 
@@ -7098,7 +7093,7 @@ namespace TesvikProgrami.Classes
                         }
                     }
 
-                    if (bfsira == Enums.BasvuruFormuTurleri.Bf7316 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && ! CariTanimla))
+                    if (bfsira == Enums.BasvuruFormuTurleri.Bf7316 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && !CariTanimla))
                     {
                         dtbasvuru = ds.Tables.Count > 9 ? ds.Tables[9] : null;
 
@@ -7638,7 +7633,7 @@ namespace TesvikProgrami.Classes
 
                 }
 
-                if (bfsira == Enums.BasvuruFormuTurleri.Bf7252 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && ! CariTanimla))
+                if (bfsira == Enums.BasvuruFormuTurleri.Bf7252 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && !CariTanimla))
                 {
                     DataTable dtbasvuru = DataTables["7252"];
 
@@ -7848,7 +7843,7 @@ namespace TesvikProgrami.Classes
 
                 }
 
-                if (bfsira == Enums.BasvuruFormuTurleri.Bf7316 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && ! CariTanimla))
+                if (bfsira == Enums.BasvuruFormuTurleri.Bf7316 || (bfsira == Enums.BasvuruFormuTurleri.BfTumu && !CariTanimla))
                 {
                     DataTable dtbasvuru = DataTables["7316"];
 
@@ -8362,7 +8357,7 @@ namespace TesvikProgrami.Classes
             return text;
         }
 
-        void TanimlamaYapilanlaraEkle(string kanun, KeyValuePair<string,DateTime> tcNoveIseGirisTarihi)
+        void TanimlamaYapilanlaraEkle(string kanun, KeyValuePair<string, DateTime> tcNoveIseGirisTarihi)
         {
             if (kanun.Equals("6111")) TanimlamaYapilanlar6111.Add(tcNoveIseGirisTarihi);
             else if (kanun.EndsWith("7103")) TanimlamaYapilanlar7103.Add(tcNoveIseGirisTarihi);

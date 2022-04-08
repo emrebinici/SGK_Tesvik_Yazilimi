@@ -239,6 +239,11 @@ namespace TesvikProgrami
 
                                     aphbSatir.Yil = yil;
                                     aphbSatir.Ay = ay;
+                                    if (elem.Element("kanun").Value == "46486" || elem.Element("kanun").Value == "56486" || elem.Element("kanun").Value == "66486")
+                                    {
+                                        elem.Element("kanun").Value = "05510";
+                                        kanun = "05510";
+                                    }
                                     aphbSatir.Kanun = kanun.Equals("00000") ? "" : kanun;
                                     aphbSatir.BelgeTuru = Convert.ToInt32(elem.Element("belgeTuru").Value).ToString();
                                     aphbSatir.Mahiyet = elem.Element("belgeMahiyet").Value.ToLower().StartsWith("a") || string.IsNullOrEmpty(elem.Element("belgeMahiyet").Value.Trim()) ? "ASIL" : elem.Element("belgeMahiyet").Value.ToLower().StartsWith("e") ? "EK" : "İPTAL";
@@ -911,6 +916,11 @@ namespace TesvikProgrami
 
                                 aphbSatir.Yil = yil;
                                 aphbSatir.Ay = ay;
+                                if (p[(int)Enums.NetsisHucreBilgileri.Kanun].ToString() == "46486" || p[(int)Enums.NetsisHucreBilgileri.Kanun].ToString() == "56486" || p[(int)Enums.NetsisHucreBilgileri.Kanun].ToString() == "66486")
+                                {
+                                    p[(int)Enums.NetsisHucreBilgileri.Kanun] = "05510";
+                                    kanun = "05510";
+                                }
                                 aphbSatir.Kanun = kanun.Equals("00000") ? "" : kanun;
                                 aphbSatir.BelgeTuru = Convert.ToInt32(p[(int)Enums.NetsisHucreBilgileri.BelgeTuru]).ToString();
                                 aphbSatir.Mahiyet = p[(int)Enums.NetsisHucreBilgileri.Mahiyet].ToString().ToLower().StartsWith("a") || string.IsNullOrEmpty(p[(int)Enums.NetsisHucreBilgileri.Mahiyet].Trim()) ? "ASIL" : p[(int)Enums.NetsisHucreBilgileri.Mahiyet].ToString().ToLower().StartsWith("e") ? "EK" : "İPTAL";
@@ -1628,6 +1638,12 @@ namespace TesvikProgrami
 
                                 aphbSatir.Yil = yil;
                                 aphbSatir.Ay = ay;
+                                if (p[(int)Enums.NetsisHucreBilgileri.Kanun].ToString() == "46486" || p[(int)Enums.NetsisHucreBilgileri.Kanun].ToString() == "56486" || p[(int)Enums.NetsisHucreBilgileri.Kanun].ToString() == "66486")
+                                {
+                                    p[(int)Enums.NetsisHucreBilgileri.Kanun] = "05510";
+                                    kanun = "05510";
+                                }
+                              
                                 aphbSatir.Kanun = kanun.Equals("00000") ? "" : kanun;
                                 aphbSatir.BelgeTuru = Convert.ToInt32(p[(int)Enums.NetsisHucreBilgileri.BelgeTuru]).ToString();
                                 aphbSatir.Mahiyet = p[(int)Enums.NetsisHucreBilgileri.Mahiyet].ToString().ToLower().StartsWith("a") || string.IsNullOrEmpty(p[(int)Enums.NetsisHucreBilgileri.Mahiyet].ToString().Trim()) ? "ASIL" : p[(int)Enums.NetsisHucreBilgileri.Mahiyet].ToString().ToLower().StartsWith("e") ? "EK" : "İPTAL";
