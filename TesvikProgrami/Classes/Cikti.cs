@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TesvikProgrami.Classes
 {
@@ -9,7 +8,7 @@ namespace TesvikProgrami.Classes
 
         public string Kanun;
 
-        public Dictionary<Classes.Kisi, string> Kisiler = new Dictionary<Classes.Kisi, string>();
+        public Dictionary<Kisi, string> Kisiler = new Dictionary<Kisi, string>();
 
         public bool Asil = true;
 

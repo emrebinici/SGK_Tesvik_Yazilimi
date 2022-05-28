@@ -77,9 +77,7 @@ namespace TesvikProgrami
         }
 
 
-
     }
-
 
 
 }

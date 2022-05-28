@@ -82,9 +82,7 @@ namespace TesvikProgrami
         }
 
 
-
     }
-
 
 
 }

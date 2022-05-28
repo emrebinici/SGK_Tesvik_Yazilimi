@@ -14,7 +14,6 @@ namespace TesvikProgrami.Classes
         public DateTime SorgulamaTarihi { get; set; }
 
 
-
     }
 
 }

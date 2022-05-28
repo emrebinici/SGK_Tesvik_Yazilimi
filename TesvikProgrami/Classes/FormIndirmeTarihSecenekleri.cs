@@ -10,12 +10,10 @@ namespace TesvikProgrami.Classes
         public DateTime BaslangicAphb { get; set; }
         public DateTime BitisAphb { get; set; }
 
-
         public bool IndirTumTesvikler { get; set; }
         public DateTime BaslangicTum { get; set; }
         public DateTime BitisTum { get; set; }
         public bool EnBastanTumu { get; set; }
-
 
         public bool Indir6111 { get; set; }
         public DateTime Baslangic6111 { get; set; }

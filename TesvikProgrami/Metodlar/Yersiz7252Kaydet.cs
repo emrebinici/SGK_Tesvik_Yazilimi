@@ -4,8 +4,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using TesvikProgrami.Classes;
 using Excel2 = Microsoft.Office.Interop.Excel;
 
 namespace TesvikProgrami

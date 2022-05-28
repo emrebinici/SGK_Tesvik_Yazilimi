@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Interop;
 using System.Xml;
 using System.Xml.Linq;
 using Excel2 = Microsoft.Office.Interop.Excel;
@@ -4220,11 +4219,12 @@ namespace TesvikProgrami.Classes
 
                                 foreach (var row in dtNetsisExcel.AsEnumerable())
                                 {
-                                    for (int i = 0; i < dtNetsisExcel.Columns.Count; i++)
-                                    {
-                                        netsistxtIcerikSb.Append(row[i].ToString() + "\t");
-                                    }
 
+                                        for (int i = 0; i < dtNetsisExcel.Columns.Count; i++)
+                                        {
+                                            netsistxtIcerikSb.Append((row[i].ToString().EndsWith("\r") ? row[i].ToString().Substring(0, row[i].ToString().Length - 1) : row[i].ToString()) + "\t");
+                                        }
+  
                                     netsistxtIcerikSb.Append("\r\n");
                                 }
 

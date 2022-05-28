@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TesvikProgrami
+﻿namespace TesvikProgrami
 {
     public static class IcmalOlusturmaSabitleri
     {

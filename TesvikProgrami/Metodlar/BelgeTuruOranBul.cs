@@ -54,9 +54,7 @@ namespace TesvikProgrami
         }
 
 
-
     }
-
 
 
 }

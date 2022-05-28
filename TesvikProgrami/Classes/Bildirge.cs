@@ -45,7 +45,6 @@ namespace TesvikProgrami.Classes
                 return false;
             }
         }
-
         public override int GetHashCode(Bildirge bildrige)
         {
             return base.GetHashCode();

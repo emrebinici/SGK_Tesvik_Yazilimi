@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using System.Linq;
-using System.IO;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
+using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Text;
-using System.Xml;
 using System.Data.SQLite;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 using TesvikProgrami.Classes;
-using System.Security.Policy;
-using System.Drawing;
-using DevExpress.XtraGrid.Views.Layout.Events;
-using NuGet;
 
 namespace TesvikProgrami
 {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using TesvikProgrami.Classes;
-
-namespace TesvikProgrami
+﻿namespace TesvikProgrami
 {
     public static partial class Metodlar
     {

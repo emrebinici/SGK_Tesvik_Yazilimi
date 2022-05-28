@@ -1,14 +1,12 @@
 ﻿using System;
-using System.IO;
-using System.Windows.Forms;
 using System.Collections.Generic;
-using Excel2 = Microsoft.Office.Interop.Excel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using ClosedXML;
-using ClosedXML.Excel;
 using System.Threading;
+using System.Windows.Forms;
+using Excel2 = Microsoft.Office.Interop.Excel;
 
 namespace TesvikProgrami.Classes
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TesvikProgrami.Classes
+﻿namespace TesvikProgrami.Classes
 {
     public class AylikCalisanDTO
     {

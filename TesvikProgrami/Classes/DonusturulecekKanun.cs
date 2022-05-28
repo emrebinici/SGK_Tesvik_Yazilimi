@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TesvikProgrami.Classes
 {
@@ -27,7 +26,6 @@ namespace TesvikProgrami.Classes
             BagliKanunlarHaricDusulecekTutar = IcmaldenDusulsun ? Metodlar.TesvikTutariHesapla(kanunNo, gun, toplamUcret, yil, ay, belgeTuru, IsyeriSicilNo,TumTesvikler, CarpimOrani687) : 0;
 
             decimal BagliKanunlarDahilDusulecekTutar = BagliKanunlarHaricDusulecekTutar;
-
             var bagliKanunlar = Metodlar.BagliKanunlariGetir(kanunNo);
 
             if (bagliKanunlar.Count > 0)
@@ -36,7 +34,7 @@ namespace TesvikProgrami.Classes
                 foreach (var bagliKanun in bagliKanunlar)
                 {
                     var bagliKanunTutarlari = DusulecekMiktarHesapla(bagliKanun, gun, toplamUcret, yil, ay, belgeTuru, IsyeriSicilNo, IcmaldenDusulsun,TumTesvikler, CarpimOrani687);
-
+            
                     foreach (var item in bagliKanunTutarlari)
                     {
                         if (!sonuc.ContainsKey(item.Key)) sonuc.Add(item.Key, new DusulecekTutarIstastistik());

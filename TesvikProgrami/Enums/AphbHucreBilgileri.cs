@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TesvikProgrami.Enums
+﻿namespace TesvikProgrami.Enums
 {
 
     public enum AphbHucreBilgileri

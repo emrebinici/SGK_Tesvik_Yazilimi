@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using System.Linq;
-using System.IO;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using TesvikProgrami.Classes;
 

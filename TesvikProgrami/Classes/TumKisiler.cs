@@ -16,6 +16,7 @@ namespace TesvikProgrami.Classes
         public  Dictionary<string, Kisi> TumKisiler = null;
 
         public DateTime enbuyukay { get; set; }
+
         public Dictionary<KeyValuePair<string, string>, List<KeyValuePair<int, int>>> tumyilveaylar { get; set; } = new Dictionary<KeyValuePair<string, string>, List<KeyValuePair<int, int>>>();
 
         public List<KeyValuePair<string, string>> yilveaylar { get; set; } = new List<KeyValuePair<string, string>>();

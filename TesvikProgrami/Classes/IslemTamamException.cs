@@ -5,9 +5,7 @@ namespace TesvikProgrami
     public class IslemTamamException : Exception
     {
         public IslemTamamException(string message)
-            : base(message)
-        {
-        }
+            : base(message){}
 
     }
 }

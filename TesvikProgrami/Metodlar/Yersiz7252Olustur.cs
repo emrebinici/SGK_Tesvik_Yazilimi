@@ -151,10 +151,6 @@ namespace TesvikProgrami
             return sonuc;
         }
 
-
-
     }
-
-
 
 }

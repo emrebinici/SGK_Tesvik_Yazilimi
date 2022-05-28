@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using TesvikProgrami.Classes;
 
 namespace TesvikProgrami
 {
@@ -21,6 +20,12 @@ namespace TesvikProgrami
             else if (Kanun.EndsWith("6486"))
             {
                 result = Gun * Metodlar.AsgariUcretBul(yil, ay) * TesvikHesaplamaSabitleri.AsgariUcretCarpimOrani;
+                //2021 12.ay dahil sonrasında 6486 dahil edilmiyor
+                if ((yil >= 2022 && ay >= 1) || (yil == 2021 && ay == 12))
+                {
+                    result = 0;
+
+                }
             }
             else if (Kanun.Equals("06645") || Kanun.Equals("16322") || Kanun.Equals("25510"))
             {
@@ -28,7 +33,9 @@ namespace TesvikProgrami
             }
             else if (Kanun.Equals("06111"))
             {
+                //result = toplamUcret * (TumTesvikler["6111"].BelgeTuruOranBul(yil, ay, belgeTuru, IsyeriSicilNo) - 5) / 100;
                 result = toplamUcret * (TumTesvikler["6111"].BelgeTuruOranBul(yil, ay, belgeTuru, IsyeriSicilNo) - 5) / 100;
+
             }
             else if (Kanun.Equals("00687"))
             {

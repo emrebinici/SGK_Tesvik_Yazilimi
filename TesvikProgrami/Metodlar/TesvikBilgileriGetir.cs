@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using TesvikProgrami.Classes;
 
 namespace TesvikProgrami.Classes
 {

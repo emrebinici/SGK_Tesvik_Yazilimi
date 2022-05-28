@@ -1,14 +1,7 @@
-﻿using DevExpress.XtraEditors.Filtering.Templates;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TesvikProgrami.Classes;
 
@@ -49,7 +42,6 @@ namespace TesvikProgrami
                 var iptalVarsayilanKanun = string.IsNullOrEmpty(kanun6486) ? "05510" : kanun6486;
 
                 DateTime baslangic = new DateTime(2011, 3, 1);
-
                 foreach (var yilay in tumKisiler.yilveaylar)
                 {
                     var tarih = new DateTime(yilay.Key.ToInt(), yilay.Value.ToInt(), 1);
@@ -256,8 +248,8 @@ namespace TesvikProgrami
                                     if (tesvik.Value == null) continue;
 
                                     var tesvikTutari = 0m;
+                                    //tesvikTutari += Metodlar.TesvikTutariHesapla(kanun, gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
 
-                                    tesvikTutari += Metodlar.TesvikTutariHesapla(kanun, gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
 
                                     BildirgeYuklemeIcmal icmal = null;
 
@@ -274,11 +266,21 @@ namespace TesvikProgrami
                                             Tutar = 0,
                                             yilay = yilay
                                         };
-
                                         tumTesvikIcmalleri[tesvik.Key].Add(icmal);
                                     }
 
+                                    //if (tesvik.Key == "05510" || tesvik.Key == "5510" || tesvik.Key == "6111" || tesvik.Key == "06111")
+                                    //{
+                                    //    icmal.Tutar += 0m;
+                                    //}
+
+                                    //else
+                                    //{
                                     icmal.Tutar += tesvikTutari;
+
+                                    //}
+
+
                                     icmal.PrimOdenenGunSayisi += gun.ToInt();
 
                                     iptalKanun = iptalKanun.PadLeft(5, '0');
@@ -286,6 +288,148 @@ namespace TesvikProgrami
                                     var DonusturulenKanun = iptalKanun;
                                     var kanunGun = Convert.ToInt32(gun);
                                     var kanunUcret = ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk();
+
+                                    //Ücret toplamlarının %0.05 i 5510 teşvikine eşitlendi
+
+                                    BildirgeYuklemeIcmal icmal5510 = tumTesvikIcmalleri["5510"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                    if (icmal5510 == null)
+                                    {
+                                        icmal5510 = new BildirgeYuklemeIcmal
+                                        {
+                                            Kanun = "5510",
+                                            Matrah = 0,
+                                            PrimOdenenGunSayisi = 0,
+                                            yilay = yilay,
+                                            Tutar = 0
+                                        };
+                                        tumTesvikIcmalleri["5510"].Add(icmal5510);
+                                    }
+
+                                    icmal5510.Tutar += kanunUcret * 0.05m;
+                                    icmal5510.PrimOdenenGunSayisi += gun.ToInt();
+
+                                    //aphb 6111 toplamının %15,5 i 6111 teşviki
+                                    if (kanun.EndsWith("6111"))
+                                    {
+                                        BildirgeYuklemeIcmal icmal6111 = tumTesvikIcmalleri["6111"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        if (icmal6111 == null)
+                                        {
+                                            icmal6111 = new BildirgeYuklemeIcmal
+                                            {
+                                                Kanun = "6111",
+                                                Matrah = 0,
+                                                PrimOdenenGunSayisi = 0,
+                                                yilay = yilay,
+                                                Tutar = 0
+                                            };
+                                            tumTesvikIcmalleri["6111"].Add(icmal6111);
+                                        }
+
+                                        icmal6111.Tutar += Metodlar.TesvikTutariHesapla(kanun, gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
+                                        icmal6111.PrimOdenenGunSayisi += gun.ToInt();
+
+                                    }
+                                    ////aphb 17103 teşviki hesabı
+                                    if (kanun.EndsWith("7103"))
+                                    {
+                                        BildirgeYuklemeIcmal icmal7103 = tumTesvikIcmalleri["7103"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        if (icmal7103 == null)
+                                        {
+                                            icmal7103 = new BildirgeYuklemeIcmal
+                                            {
+                                                Kanun = "7103",
+                                                Matrah = 0,
+                                                PrimOdenenGunSayisi = 0,
+                                                yilay = yilay,
+                                                Tutar = 0
+                                            };
+                                            tumTesvikIcmalleri["7103"].Add(icmal7103);
+                                        }
+                                        icmal7103.Tutar += Metodlar.TesvikTutariHesapla(kanun, gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
+                                        icmal7103.PrimOdenenGunSayisi += gun.ToInt();
+                                    }
+                                    //aphb 6645 teşviki hesabı
+                                    if (kanun.EndsWith("6645"))
+                                    {
+                                        BildirgeYuklemeIcmal icmal6645 = tumTesvikIcmalleri["6645"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        if (icmal6645 == null)
+                                        {
+                                            icmal6645 = new BildirgeYuklemeIcmal
+                                            {
+                                                Kanun = "6645",
+                                                Matrah = 0,
+                                                PrimOdenenGunSayisi = 0,
+                                                yilay = yilay,
+                                                Tutar = 0
+                                            };
+                                            tumTesvikIcmalleri["6645"].Add(icmal6645);
+                                        }
+                                        icmal6645.Tutar += Metodlar.TesvikTutariHesapla(kanun, gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
+                                        icmal6645.PrimOdenenGunSayisi += gun.ToInt();
+
+                                    }
+
+                                    ////4857 hesaplama
+                                    if (kanun.EndsWith("4857"))
+                                    {
+                                        BildirgeYuklemeIcmal icmal4857 = tumTesvikIcmalleri["14857"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        if (icmal4857 == null)
+                                        {
+                                            icmal4857 = new BildirgeYuklemeIcmal
+                                            {
+                                                Kanun = "4857",
+                                                Matrah = 0,
+                                                PrimOdenenGunSayisi = 0,
+                                                yilay = yilay,
+                                                Tutar = 0
+                                            };
+                                            tumTesvikIcmalleri["4857"].Add(icmal4857);
+                                        }
+                                        icmal4857.Tutar += Metodlar.TesvikTutariHesapla(kanun, gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
+                                        icmal4857.PrimOdenenGunSayisi += gun.ToInt();
+                                    }
+
+                                    //6322 teşvik hesaplaması
+                                    if (kanun.EndsWith("6322"))
+                                    {
+                                        BildirgeYuklemeIcmal icmal6322 = tumTesvikIcmalleri["6322/25510"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        if (icmal6322 == null)
+                                        {
+                                            icmal6322 = new BildirgeYuklemeIcmal
+                                            {
+                                                Kanun = "6322",
+                                                Matrah = 0,
+                                                PrimOdenenGunSayisi = 0,
+                                                yilay = yilay,
+                                                Tutar = 0
+                                            };
+                                            tumTesvikIcmalleri["6322"].Add(icmal6322);
+                                        }
+                                        icmal6322.Tutar += Metodlar.TesvikTutariHesapla("16322", gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
+                                        icmal6322.PrimOdenenGunSayisi += gun.ToInt();
+                                    }
+
+                                    //6486 teşviki
+                                    if (kanun.EndsWith("6486") || kanun.EndsWith("6111") || kanun.EndsWith("6645") || kanun.EndsWith("14857") || kanun.EndsWith("7103"))
+                                    {
+                                        BildirgeYuklemeIcmal icmal6486 = tumTesvikIcmalleri["6486"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        if (icmal6486 == null)
+                                        {
+                                            icmal6486 = new BildirgeYuklemeIcmal
+                                            {
+                                                Kanun = "6486",
+                                                Matrah = 0,
+                                                PrimOdenenGunSayisi = 0,
+                                                yilay = yilay,
+                                                Tutar = 0
+                                            };
+                                            tumTesvikIcmalleri["6486"].Add(icmal6486);
+                                        }
+
+                                        icmal6486.Tutar += Metodlar.TesvikTutariHesapla("6486", gun.ToInt(), ucret.ToDecimalSgk() + ikramiye.ToDecimalSgk(), tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, null, CarpimOrani687);
+                                        icmal6486.PrimOdenenGunSayisi += gun.ToInt();
+
+                                    }
 
                                     var dk = tesvik.Value.DonusturulecekKanunlar.FirstOrDefault(p => p.Key.Equals(DonusturulenKanun)).Value;
 
@@ -309,33 +453,34 @@ namespace TesvikProgrami
 
                                         var dusulecekTutarlar = DonusturulecekKanun.DusulecekMiktarHesapla(DonusturulenKanun, kanunGun, kanunUcret, tarih.Year, tarih.Month, belgeTuru, isyeri.IsyeriSicilNo, tesvik.Value.DonusenlerIcmaldenDusulsun, null, CarpimOrani687)[DonusturulenKanun];
                                         var dusulecekTutar = dusulecekTutarlar.BagliKanunlarDahilDusulecekTutar;
-
                                         icmal.Tutar -= dusulecekTutar;
 
-                                        if (DonusturulenKanun.EndsWith("6486"))
-                                        {
-                                            BildirgeYuklemeIcmal icmal6486 = null;
+                                        //if (DonusturulenKanun.EndsWith("6486"))
+                                        //{
 
-                                            if (tumTesvikIcmalleri.ContainsKey("6486"))
-                                                icmal6486 = tumTesvikIcmalleri["6486"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
+                                        //    BildirgeYuklemeIcmal icmal6486 = null;
 
-                                            if (icmal6486 == null)
-                                            {
-                                                icmal6486 = new BildirgeYuklemeIcmal
-                                                {
-                                                    Kanun = DonusturulenKanun,
-                                                    Matrah = 0,
-                                                    PrimOdenenGunSayisi = 0,
-                                                    Tutar = 0,
-                                                    yilay = yilay
-                                                };
+                                        //    if (tumTesvikIcmalleri.ContainsKey("6486"))
+                                        //        icmal6486 = tumTesvikIcmalleri["6486"].FirstOrDefault(p => p.yilay.Key == yilay.Key && p.yilay.Value == yilay.Value);
 
-                                                tumTesvikIcmalleri["6486"].Add(icmal6486);
-                                            }
+                                        //    if (icmal6486 == null)
+                                        //    {
+                                        //        icmal6486 = new BildirgeYuklemeIcmal
+                                        //        {
+                                        //            Kanun = DonusturulenKanun,
+                                        //            Matrah = 0,
+                                        //            PrimOdenenGunSayisi = 0,
+                                        //            Tutar = 0,
+                                        //            yilay = yilay
+                                        //        };
 
-                                            icmal6486.Tutar += dusulecekTutarlar.BagliKanunlarHaricDusulecekTutar;
-                                            icmal6486.PrimOdenenGunSayisi += gun.ToInt();
-                                        }
+                                        //        tumTesvikIcmalleri["6486"].Add(icmal6486);
+                                        //    }
+
+                                        //    icmal6486.Tutar += dusulecekTutarlar.BagliKanunlarHaricDusulecekTutar;
+                                        //    icmal6486.PrimOdenenGunSayisi += gun.ToInt();
+                                        //}
+
                                     }
 
                                 }
@@ -345,6 +490,8 @@ namespace TesvikProgrami
                 }
 
                 var kaydetmeSonucu = Metodlar.AphbIcmalKaydet(isyeri, tumTesvikIcmalleri);
+
+
 
                 result.Durum = kaydetmeSonucu.Durum;
                 result.HataMesaji = kaydetmeSonucu.HataMesaji;
