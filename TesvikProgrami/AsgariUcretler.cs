@@ -9,9 +9,7 @@
 
 namespace TesvikProgrami
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class AsgariUcretler
     {
         public long ID { get; set; }

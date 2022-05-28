@@ -9,9 +9,7 @@
 
 namespace TesvikProgrami
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class BelgeTurleri
     {
         public long BelgeTuruID { get; set; }

@@ -9,9 +9,7 @@
 
 namespace TesvikProgrami
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class KisaVadeliSigortaPrimKoluOranlari
     {
         public long ID { get; set; }

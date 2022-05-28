@@ -9,9 +9,7 @@
 
 namespace TesvikProgrami
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class Cari14857YapilanSirketler
     {
         public long Id { get; set; }
